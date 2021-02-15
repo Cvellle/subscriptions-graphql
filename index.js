@@ -55,6 +55,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-// const url =
-//   "http://localhost:4000/" || "graphql-subscriptions-chat.herokuapp.com";
-server.listen("graphql-subscriptions-chat.herokuapp.com");
+
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
